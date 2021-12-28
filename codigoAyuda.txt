@@ -1,0 +1,58 @@
+///mezclando aleatoriamente los datos de un array
+
+var tmpArray = [1,4,5,3,9,8,16];
+
+///funcion 1
+function shuffleArray(arr){
+    inputArray.sort(()=> Math.random() - 0.5);
+}
+
+shuffleArray(tmpArray);
+console.log(tmpArray);
+
+///funcion 2
+function fisherYatesShuffle(arr){
+    for(var i =arr.length-1 ; i>0 ;i--){
+        var j = Math.floor( Math.random() * (i + 1) ); //random index
+        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+    }
+}
+
+fisherYatesShuffle(tmpArray);
+console.log(tmpArray);
+
+/////tambien funciona con este array (el importante)
+[
+    {
+        "nombre": "nombre 2",
+        "score": 10
+    },
+    {
+        "nombre": "nombre 4",
+        "score": 10
+    },
+    {
+        "nombre": "nombre 1",
+        "score": 10
+    },
+    {
+        "nombre": "nombre 87",
+        "score": 3
+    },
+    {
+        "nombre": "nombre 19",
+        "score": 8
+    },
+    {
+        "nombre": "nombre 3",
+        "score": 10
+    },
+    {
+        "nombre": "nombre 99",
+        "score": 1
+    },
+    {
+        "nombre": "nombre 43",
+        "score": 6
+    }
+]
