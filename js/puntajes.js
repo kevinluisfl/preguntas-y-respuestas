@@ -1,5 +1,5 @@
 const datostorage = JSON.parse(localStorage.getItem('datos'));
-const tabla = document.querySelector('#tablaganadores');
+const tabla = document.querySelector('#tablapuntajes');
 const btnBorrar = document.querySelector('#btnborrartodo');
 
 if(datostorage){
@@ -64,7 +64,7 @@ btnBorrar.addEventListener("click", ()=>{
               })
           }else{
               localStorage.removeItem('datos');
-              window.location="./ganadores.html";
+              window.location="./puntajes.html";
           }
         }
       })
