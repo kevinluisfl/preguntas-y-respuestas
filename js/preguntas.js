@@ -373,7 +373,7 @@ function compruebaRespuesta(btn){
             showConfirmButton: false,
             allowOutsideClick: false,
           })
-          setTimeout(function (){guardaDatos()},5000);
+          setTimeout(function (){sndganar.stop(); guardaDatos();},5000);
         }else{
           ////mostrar la ronda en pantalla
           ron.innerHTML = r;
