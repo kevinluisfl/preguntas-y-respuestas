@@ -13,21 +13,21 @@ const categorias = [
 ]
 
 const preguntas = [
-  {idpregunta: 1, pregunta:'¿Cuál es el animal nacional de Australia?', idcategoria: 1, valor: 5, url:'https://www.esl-idiomas.com/sites/default/files/styles/hero_banner_mobile/public/country/esl-australia-language-stay-hero.jpg?itok=VhTZThXQ'},
-  {idpregunta: 2, pregunta:'¿Cuántos días le toma a la tierra dar una vuelta a la órbita del sol?', idcategoria: 1, valor: 5, url:'https://concepto.de/wp-content/uploads/2019/02/traslacion-de-la-tierra-portada-1.jpg'},
-  {idpregunta: 3, pregunta:'¿Cuál es el país más pequeño del mundo?', idcategoria: 2, valor: 10, url:'https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg'},
-  {idpregunta: 4, pregunta:'¿Cuál es la capital de Canadá?', idcategoria: 2, valor: 10, url:'https://www.liberal.com.mx/wp-content/uploads/2021/03/canada-foto-shutterstock.jpg'},
-  {idpregunta: 5, pregunta:'¿Cuál es el río más largo del mundo?', idcategoria: 3, valor: 15, url:'https://www.hola.com/imagenes/viajes/2014032170330/rios-mundo-dia-mundial-agua/0-932-783/los-rios-mas-importantes-del-planeta-e.jpg'},
-  {idpregunta: 6, pregunta:'¿Cuál es la obra más famosa de Edvard Munch?', idcategoria: 5, valor: 25, url:'https://biografiadee.com/wp-content/uploads/2020/02/edvard-munch.jpeg'},
-  {idpregunta: 7, pregunta:'¿Qué artista pinto el techo de la Capilla Sixtina en Roma?', idcategoria: 4, valor: 20, url:'https://4.bp.blogspot.com/-3-Ip6B7ImYA/WZw01UhwOUI/AAAAAAAAM8c/vrOKSLuNQM0Qilx-KcG3qwh2JUnIEpkwwCLcBGAs/s1600/capilla-sixtina-roma.jpg'},
-  {idpregunta: 8, pregunta:'¿Quién inventó la World Wide Web?', idcategoria: 5, valor: 25, url:'https://definicionde.es/wp-content/uploads/2019/03/definicion-de-world-wide-web.jpg'},
-  {idpregunta: 9, pregunta:'¿Cuántas teclas tiene un piano?', idcategoria: 4, valor: 20, url:'https://files.soniccdn.com/imagehosting/2a/7639_640.jpg'},
-  {idpregunta: 10, pregunta:'¿Qué nave llegó a la luna en 1969?', idcategoria: 3, valor: 15, url:'http://c.files.bbci.co.uk/02BA/production/_107889600_package1.jpg'},
-  {idpregunta: 11, pregunta:'¿Qué conductor de la Formula 1 ha ganado más campeonatos?', idcategoria: 3, valor: 15, url:'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2015/12/19/14505420071916.jpg'},
-  {idpregunta: 12, pregunta:'¿Cuál fue la primer película de Disney?', idcategoria: 2, valor: 10, url:'https://www.elespectador.com/resizer/Y16IQG5kUVi137v9OasVaHdsXdk=/657x0/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/SNBM454ZBFDSXCR6PS7SW7RAXE.jpg'},
-  {idpregunta: 13, pregunta:'¿Cuál fue el primer país en aprobar el sufragio femenino?', idcategoria: 5, valor: 25, url:'https://www.gaceta.unam.mx/wp-content/uploads/2021/06/210701-aca3-des-f1-sufragio-femenino.jpg'},
-  {idpregunta: 14, pregunta:'¿En qué año se disolvió la Unión Soviética?', idcategoria: 4, valor: 20, url:'https://cdni.rt.com/actualidad/public_images/ff6/ff6e8e6a3415a6450f44febe5258eb81_article.jpg'},
-  {idpregunta: 15, pregunta:'¿Cuál es la montaña más alta del mundo?', idcategoria: 1, valor: 5, url:'https://www.aventura-amazonia.com/laravel-filemanager/files/shares/Manaslu.jpg'},
+  {idpregunta: 1, pregunta:'¿Cuál es el animal nacional de Australia?', idcategoria: 1, alt: 'australia', url:'https://www.esl-idiomas.com/sites/default/files/styles/hero_banner_mobile/public/country/esl-australia-language-stay-hero.jpg?itok=VhTZThXQ'},
+  {idpregunta: 2, pregunta:'¿Cuántos días le toma a la tierra dar una vuelta a la órbita del sol?', idcategoria: 1, alt: 'translacion terrestre', url:'https://concepto.de/wp-content/uploads/2019/02/traslacion-de-la-tierra-portada-1.jpg'},
+  {idpregunta: 3, pregunta:'¿Cuál es el país más pequeño del mundo?', idcategoria: 2, alt: 'pais más pequeño', url:'https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg'},
+  {idpregunta: 4, pregunta:'¿Cuál es la capital de Canadá?', idcategoria: 2, alt: 'canadá', url:'https://www.liberal.com.mx/wp-content/uploads/2021/03/canada-foto-shutterstock.jpg'},
+  {idpregunta: 5, pregunta:'¿Cuál es el río más largo del mundo?', idcategoria: 3, alt: 'rio más largo', url:'https://www.hola.com/imagenes/viajes/2014032170330/rios-mundo-dia-mundial-agua/0-932-783/los-rios-mas-importantes-del-planeta-e.jpg'},
+  {idpregunta: 6, pregunta:'¿Cuál es la obra más famosa de Edvard Munch?', idcategoria: 5, alt: 'munch', url:'https://biografiadee.com/wp-content/uploads/2020/02/edvard-munch.jpeg'},
+  {idpregunta: 7, pregunta:'¿Qué artista pinto el techo de la Capilla Sixtina en Roma?', idcategoria: 4, alt: 'capilla sixtina', url:'https://4.bp.blogspot.com/-3-Ip6B7ImYA/WZw01UhwOUI/AAAAAAAAM8c/vrOKSLuNQM0Qilx-KcG3qwh2JUnIEpkwwCLcBGAs/s1600/capilla-sixtina-roma.jpg'},
+  {idpregunta: 8, pregunta:'¿Quién inventó la World Wide Web?', idcategoria: 5, alt: 'world wide web', url:'https://definicionde.es/wp-content/uploads/2019/03/definicion-de-world-wide-web.jpg'},
+  {idpregunta: 9, pregunta:'¿Cuántas teclas tiene un piano?', idcategoria: 4, alt: 'piano', url:'https://files.soniccdn.com/imagehosting/2a/7639_640.jpg'},
+  {idpregunta: 10, pregunta:'¿Qué nave llegó a la luna en 1969?', idcategoria: 3, alt: 'alunizaje', url:'http://c.files.bbci.co.uk/02BA/production/_107889600_package1.jpg'},
+  {idpregunta: 11, pregunta:'¿Qué conductor de la Formula 1 ha ganado más campeonatos?', idcategoria: 3, alt: 'formula 1', url:'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2015/12/19/14505420071916.jpg'},
+  {idpregunta: 12, pregunta:'¿Cuál fue la primer película de Disney?', idcategoria: 2, alt: 'disney', url:'https://www.elespectador.com/resizer/Y16IQG5kUVi137v9OasVaHdsXdk=/657x0/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/SNBM454ZBFDSXCR6PS7SW7RAXE.jpg'},
+  {idpregunta: 13, pregunta:'¿Cuál fue el primer país en aprobar el sufragio femenino?', idcategoria: 5, alt: 'sufragio femenino', url:'https://www.gaceta.unam.mx/wp-content/uploads/2021/06/210701-aca3-des-f1-sufragio-femenino.jpg'},
+  {idpregunta: 14, pregunta:'¿En qué año se disolvió la Unión Soviética?', idcategoria: 4, alt: 'disolucion unión soviética', url:'https://cdni.rt.com/actualidad/public_images/ff6/ff6e8e6a3415a6450f44febe5258eb81_article.jpg'},
+  {idpregunta: 15, pregunta:'¿Cuál es la montaña más alta del mundo?', idcategoria: 1, alt: 'montaña más alta del mundo', url:'https://www.aventura-amazonia.com/laravel-filemanager/files/shares/Manaslu.jpg'},
 ]
 
 const respuestas = [
@@ -154,8 +154,8 @@ titulo.textContent= `Hola ${user}, Escoge la opción correcta`;
 window.onload = cargarPregunta();
 
 btnRetiro.addEventListener("click", ()=>{
-  /////PREGUNTAR POR LOS PUNTOS, PARA QUE NO GUARDE CON 0 PTS
-  ////SI SE RETIRA EN LA PRIMERA LO LLEVE AL INICIO
+  /////* PREGUNTAR POR LOS PUNTOS, PARA QUE NO GUARDE CON 0 PTS
+  ////* SI SE RETIRA EN LA PRIMERA LO LLEVE AL INICIO
     Swal.fire({
         title: 'Desea retirarse?',
         html: `El juego terminará con el siguiente acumulado: <br>
@@ -167,31 +167,41 @@ btnRetiro.addEventListener("click", ()=>{
         confirmButtonText: 'Si, retirarme!'
       }).then((result) => {
         if (result.isConfirmed) {
-          ///parar contador
-          ban = false;
-          ///formatear fecha
-          var date = new Date();
-          datos= {...datos, puntos: p, tiempo: t, fecha: date.toLocaleString()};
-          ///pasar datos al historial
-          historial.push(datos);
-          localStorage.removeItem('datos');
-          ////pasar datos al localstorage
-          localStorage.setItem('datos', JSON.stringify(historial));
-          ////redireccionar al page puntajes
-          window.location="./puntajes.html";
-          localStorage.removeItem('user');
+          if(p == 0){
+            window.location="./index.html";
+          }else{
+            guardaDatos();
+          }
         }
       })
 })
 
+/////FUNCION PARA GUARDAR DATOS
+function guardaDatos(){
+    ///parar contador
+    ban = false;
+    ///formatear fecha
+    var date = new Date();
+    datos= {...datos, puntos: p, tiempo: t, fecha: date.toLocaleString()};
+    ///pasar datos al historial
+    historial.push(datos);
+    localStorage.removeItem('datos');
+    ////pasar datos al localstorage
+    localStorage.setItem('datos', JSON.stringify(historial));
+    ////redireccionar al page puntajes
+    window.location="./puntajes.html";
+    localStorage.removeItem('user');
+}
 
 //////////FUNCION AL CARGAR Y AL CAMBIAR PREGUNTA
 function cargarPregunta(){
 
+  ////volver clases preseleccion
   btn1.setAttribute('class', "btn btn-outline-secondary");
   btn2.setAttribute('class', "btn btn-outline-secondary");
   btn3.setAttribute('class', "btn btn-outline-secondary");
   btn4.setAttribute('class', "btn btn-outline-secondary");
+  ////habilitar los botones de respuestas
   btn1.removeAttribute('disabled');
   btn2.removeAttribute('disabled');
   btn3.removeAttribute('disabled');
@@ -207,17 +217,14 @@ function cargarPregunta(){
 
   var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
   ordenAleatorio(preguntascategoria);
-  console.log(preguntascategoria);
 
-  ///////escoger una pregunta dependiendo la ronda (1,2,3,4,5)
+  ///////* escoger una pregunta dependiendo la ronda (1,2,3,4,5)
   // var preguntaactual = preguntascategoria.find(pr => pr.idcategoria == r);
   preguntaactual = preguntascategoria[0];
-  console.log(preguntaactual);
 
   //////filtrar respuestas de esa pregunta
   var opcionesrespuestas = respuestas.filter(re => re.idpregunta == preguntaactual.idpregunta);
   ordenAleatorio(opcionesrespuestas);
-  console.log(opcionesrespuestas);
   //////* quedaria un objeto con la pregunta, y un array con las 4 respuestas
   //////* asignarle un value al boton respuestas.correcta
 
@@ -225,11 +232,13 @@ function cargarPregunta(){
   var preguntavista = document.querySelector('#pregunta');
   preguntavista.textContent = preguntaactual.pregunta;
 
-  ////IMAGEN- img atributo src, cambiar preguntas.url
+  ////* IMAGEN- img atributo src, cambiar preguntas.url
   var imagen = document.querySelector('img');
   imagen.setAttribute('src', preguntaactual.url);
+  imagen.alt = preguntaactual.alt;
+  console.log(imagen.alt);
 
-  ////RESPUESTAS- button id = res1 - res4, textContent = respuestas.respuesta
+  ////* RESPUESTAS- button id = res1 - res4, textContent = respuestas.respuesta
   btn1.textContent = opcionesrespuestas[0].respuesta;
   btn1.setAttribute('value', opcionesrespuestas[0].correcta);
 
@@ -247,22 +256,18 @@ function cargarPregunta(){
 
 
 btn1.addEventListener("click", ()=>{
-  console.log(btn1.value);
   btn1.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn1);
 })
 btn2.addEventListener("click", ()=>{
-  console.log(btn2.value);
   btn2.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn2);
 })
 btn3.addEventListener("click", ()=>{
-  console.log(btn3.value);
   btn3.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn3);
 })
 btn4.addEventListener("click", ()=>{
-  console.log(btn4.value);
   btn4.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn4);
 })
@@ -284,7 +289,6 @@ function compruebaRespuesta(btn){
         valorpunto = cat.valorcategoria
         }
      })
-     console.log(valorpunto);
      p+=valorpunto;
      pun.innerHTML = p;
 
@@ -299,23 +303,46 @@ function compruebaRespuesta(btn){
        console.log("SIGUIENTE PREGUNTA");
         confirma.textContent = '';
         r++;
-       ////cuando la ronda sea 5, mostrar mensaje de victoria
+       ////* cuando la ronda sea 5, mostrar mensaje de victoria
         if(r > 5){
-          ////mensaje, mandar a puntajes.html
           console.log("NO HAY MÁS CATEGORIAS");
-          return;
+          ban = false; ///para detener el tiempo
+          Swal.fire({
+            title: `Felicidades! ${user}`,
+            text: 'lograste responder todas las preguntas correctamente.',
+            imageUrl: 'https://media.giphy.com/media/J5GhsPx9UnxOXOIWJa/giphy.gif',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'celebración',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+          })
+          setTimeout(function (){guardaDatos()},5000);
         }else{
+          ////mostrar la ronda en pantalla
           ron.innerHTML = r;
           ////funcion que carga las nuevas preguntas
           cargarPregunta();
         }
      }else{
-       console.log("VOLVER AL INICIO");
-       window.location="./index.html";
+      Swal.fire({
+        title: 'Revancha?',
+        showDenyButton: true,
+        confirmButtonText: 'Si, revancha',
+        denyButtonText: `No gracias`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          console.log("VOLVER A INTENTAR");
+          window.location="./preguntas.html";
+        } else if (result.isDenied) {
+          console.log("VOLVER AL INICIO");
+            window.location="./index.html";
+        }
+      })
      }
-   }, 1500)
+   }, 1000)
 
- }, 1500);
+ }, 1250);
 
 }
 
@@ -323,9 +350,9 @@ function compruebaRespuesta(btn){
 ////* asignar atributo disabled para no cambie eleccion
 ////* esperar y cambiar la class de la correcta por btn-success
 ////* en seleccion  incorrecta cambiar la class de btn-warning a btn-danger
+///* al comprobar respuesta cargar nuevos datos de siguiente pregunta
+///* actualizar puntuacion, ronda 
+////* cambiar categoria
+////* Crear mensaje alert con gif al completar las 5 preguntas correctamente
 
-///al comprobar respuesta cargar nuevos datos de siguiente pregunta
-///actualizar puntuacion, ronda 
-
-////cambiar categoria
-////Crear mensaje alert con gif al completar las 5 preguntas correctamente
+///* sonidos: al errar, acertar, finalizar

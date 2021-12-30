@@ -16,10 +16,8 @@ btnComenzar.addEventListener("click", ()=>{
             showConfirmButton: true,
           })
     }else{
-        console.log(user.value);
         localStorage.setItem('user',user.value);
         window.location="preguntas.html";
     }
 
 })
-
