@@ -13,21 +13,32 @@ const categorias = [
 ]
 
 const preguntas = [
-  {idpregunta: 1, pregunta:'¿Cuál es el animal nacional de Australia?', idcategoria: 1, alt: 'australia', url:'https://www.esl-idiomas.com/sites/default/files/styles/hero_banner_mobile/public/country/esl-australia-language-stay-hero.jpg?itok=VhTZThXQ'},
-  {idpregunta: 2, pregunta:'¿Cuántos días le toma a la tierra dar una vuelta a la órbita del sol?', idcategoria: 1, alt: 'translacion terrestre', url:'https://concepto.de/wp-content/uploads/2019/02/traslacion-de-la-tierra-portada-1.jpg'},
-  {idpregunta: 3, pregunta:'¿Cuál es el país más pequeño del mundo?', idcategoria: 2, alt: 'pais más pequeño', url:'https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg'},
-  {idpregunta: 4, pregunta:'¿Cuál es la capital de Canadá?', idcategoria: 2, alt: 'canadá', url:'https://www.liberal.com.mx/wp-content/uploads/2021/03/canada-foto-shutterstock.jpg'},
-  {idpregunta: 5, pregunta:'¿Cuál es el río más largo del mundo?', idcategoria: 3, alt: 'rio más largo', url:'https://www.hola.com/imagenes/viajes/2014032170330/rios-mundo-dia-mundial-agua/0-932-783/los-rios-mas-importantes-del-planeta-e.jpg'},
-  {idpregunta: 6, pregunta:'¿Cuál es la obra más famosa de Edvard Munch?', idcategoria: 5, alt: 'munch', url:'https://biografiadee.com/wp-content/uploads/2020/02/edvard-munch.jpeg'},
-  {idpregunta: 7, pregunta:'¿Qué artista pinto el techo de la Capilla Sixtina en Roma?', idcategoria: 4, alt: 'capilla sixtina', url:'https://4.bp.blogspot.com/-3-Ip6B7ImYA/WZw01UhwOUI/AAAAAAAAM8c/vrOKSLuNQM0Qilx-KcG3qwh2JUnIEpkwwCLcBGAs/s1600/capilla-sixtina-roma.jpg'},
-  {idpregunta: 8, pregunta:'¿Quién inventó la World Wide Web?', idcategoria: 5, alt: 'world wide web', url:'https://definicionde.es/wp-content/uploads/2019/03/definicion-de-world-wide-web.jpg'},
-  {idpregunta: 9, pregunta:'¿Cuántas teclas tiene un piano?', idcategoria: 4, alt: 'piano', url:'https://files.soniccdn.com/imagehosting/2a/7639_640.jpg'},
-  {idpregunta: 10, pregunta:'¿Qué nave llegó a la luna en 1969?', idcategoria: 3, alt: 'alunizaje', url:'http://c.files.bbci.co.uk/02BA/production/_107889600_package1.jpg'},
-  {idpregunta: 11, pregunta:'¿Qué conductor de la Formula 1 ha ganado más campeonatos?', idcategoria: 3, alt: 'formula 1', url:'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2015/12/19/14505420071916.jpg'},
-  {idpregunta: 12, pregunta:'¿Cuál fue la primer película de Disney?', idcategoria: 2, alt: 'disney', url:'https://www.elespectador.com/resizer/Y16IQG5kUVi137v9OasVaHdsXdk=/657x0/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/SNBM454ZBFDSXCR6PS7SW7RAXE.jpg'},
-  {idpregunta: 13, pregunta:'¿Cuál fue el primer país en aprobar el sufragio femenino?', idcategoria: 5, alt: 'sufragio femenino', url:'https://www.gaceta.unam.mx/wp-content/uploads/2021/06/210701-aca3-des-f1-sufragio-femenino.jpg'},
-  {idpregunta: 14, pregunta:'¿En qué año se disolvió la Unión Soviética?', idcategoria: 4, alt: 'disolucion unión soviética', url:'https://cdni.rt.com/actualidad/public_images/ff6/ff6e8e6a3415a6450f44febe5258eb81_article.jpg'},
-  {idpregunta: 15, pregunta:'¿Cuál es la montaña más alta del mundo?', idcategoria: 1, alt: 'montaña más alta del mundo', url:'https://www.aventura-amazonia.com/laravel-filemanager/files/shares/Manaslu.jpg'},
+  {idpregunta: 1, pregunta:' ¿Cuál es el animal nacional de Australia?', idcategoria: 1, alt: 'australia', url:'https://www.esl-idiomas.com/sites/default/files/styles/hero_banner_mobile/public/country/esl-australia-language-stay-hero.jpg?itok=VhTZThXQ'},
+  {idpregunta: 2, pregunta:' ¿Cuántos días le toma a la tierra dar una vuelta a la órbita del sol?', idcategoria: 1, alt: 'translacion terrestre', url:'https://concepto.de/wp-content/uploads/2019/02/traslacion-de-la-tierra-portada-1.jpg'},
+  {idpregunta: 3, pregunta:' ¿Cuál es el país más pequeño del mundo?', idcategoria: 2, alt: 'pais más pequeño', url:'https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg'},
+  {idpregunta: 4, pregunta:' ¿Cuál es la capital de Canadá?', idcategoria: 2, alt: 'canadá', url:'https://www.liberal.com.mx/wp-content/uploads/2021/03/canada-foto-shutterstock.jpg'},
+  {idpregunta: 5, pregunta:' ¿Cuál es el río más largo del mundo?', idcategoria: 3, alt: 'rio más largo', url:'https://www.hola.com/imagenes/viajes/2014032170330/rios-mundo-dia-mundial-agua/0-932-783/los-rios-mas-importantes-del-planeta-e.jpg'},
+  {idpregunta: 6, pregunta:' ¿Cuál es la obra más famosa de Edvard Munch?', idcategoria: 5, alt: 'munch', url:'https://biografiadee.com/wp-content/uploads/2020/02/edvard-munch.jpeg'},
+  {idpregunta: 7, pregunta:' ¿Qué artista pinto el techo de la Capilla Sixtina en Roma?', idcategoria: 4, alt: 'capilla sixtina', url:'https://4.bp.blogspot.com/-3-Ip6B7ImYA/WZw01UhwOUI/AAAAAAAAM8c/vrOKSLuNQM0Qilx-KcG3qwh2JUnIEpkwwCLcBGAs/s1600/capilla-sixtina-roma.jpg'},
+  {idpregunta: 8, pregunta:' ¿Quién inventó la World Wide Web?', idcategoria: 5, alt: 'world wide web', url:'https://definicionde.es/wp-content/uploads/2019/03/definicion-de-world-wide-web.jpg'},
+  {idpregunta: 9, pregunta:' ¿Cuántas teclas tiene un piano?', idcategoria: 4, alt: 'piano', url:'https://files.soniccdn.com/imagehosting/2a/7639_640.jpg'},
+  {idpregunta: 10, pregunta:' ¿Qué nave llegó a la luna en 1969?', idcategoria: 3, alt: 'alunizaje', url:'http://c.files.bbci.co.uk/02BA/production/_107889600_package1.jpg'},
+  {idpregunta: 11, pregunta:' ¿Qué conductor de la Formula 1 ha ganado más campeonatos?', idcategoria: 3, alt: 'formula 1', url:'https://e00-marca.uecdn.es/assets/multimedia/imagenes/2015/12/19/14505420071916.jpg'},
+  {idpregunta: 12, pregunta:' ¿Cuál fue la primer película de Disney?', idcategoria: 2, alt: 'disney', url:'https://www.elespectador.com/resizer/Y16IQG5kUVi137v9OasVaHdsXdk=/657x0/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/SNBM454ZBFDSXCR6PS7SW7RAXE.jpg'},
+  {idpregunta: 13, pregunta:' ¿Cuál fue el primer país en aprobar el sufragio femenino?', idcategoria: 5, alt: 'sufragio femenino', url:'https://www.gaceta.unam.mx/wp-content/uploads/2021/06/210701-aca3-des-f1-sufragio-femenino.jpg'},
+  {idpregunta: 14, pregunta:' ¿En qué año se disolvió la Unión Soviética?', idcategoria: 4, alt: 'disolucion unión soviética', url:'https://cdni.rt.com/actualidad/public_images/ff6/ff6e8e6a3415a6450f44febe5258eb81_article.jpg'},
+  {idpregunta: 15, pregunta:' ¿Cuál es la montaña más alta del mundo?', idcategoria: 1, alt: 'montaña más alta del mundo', url:'https://www.aventura-amazonia.com/laravel-filemanager/files/shares/Manaslu.jpg'},
+  {idpregunta: 16, pregunta:' ¿Cuál es la capital de Indonesia?', idcategoria: 5, alt: 'indonesia', url:'https://static.nationalgeographic.es/files/styles/image_3200/public/3243.600x450.jpg?w=710&h=533'},
+  {idpregunta: 17, pregunta:' ¿Cuál de los cinco sentidos se desarrolla el primero?', idcategoria: 4, alt: '5 sentidos', url:'http://imgs.globovision.com/4daRlBwzdvnS0KNChs8xc-PrhK4=/847x0/smart/c371a915ee6f452ab18f42727f3400c3'},
+  {idpregunta: 18, pregunta:' ¿Qué país africano fue fundado en 1847 por esclavos americanos liberados?', idcategoria: 5, alt: 'africa', url:'https://eacnur.org/files/mapa_de_africa_800x782.png'},
+  {idpregunta: 19, pregunta:' ¿Quién fue la primera voz de Mickey Mouse?', idcategoria: 3, alt: 'mickey mouse', url:'https://imagenes.20minutos.es/files/image_656_370/uploads/imagenes/2017/11/17/582611.jpg'},
+  {idpregunta: 20, pregunta:' ¿Qué palabra significa “hijo de” en los apellidos escoceses?', idcategoria: 4, alt: 'escoceses', url:'http://www.lavozdelsandinismo.com/wp-estaticos/2017/10/kilt.jpg'},
+  {idpregunta: 21, pregunta:' ¿En qué país se encuentra el pico Aconcagua?', idcategoria: 3, alt: 'aconcagua', url:'https://media-cdn.tripadvisor.com/media/photo-s/14/68/80/e1/aconcagua.jpg'},
+  {idpregunta: 22, pregunta:' ¿Cuántos jugadores tiene un equipo de voleibol?', idcategoria: 2, alt: 'volleyball', url:'https://conceptodefinicion.de/wp-content/uploads/2021/11/voleibol_1.jpg'},
+  {idpregunta: 23, pregunta:' ¿Qué país está entre Perú y Colombia?', idcategoria: 1, alt: 'suramerica', url:'https://www.directfutbol.com/wp-content/uploads/2020/07/Mapa_Sudamerica_10paises-453x480.jpg'},
+  {idpregunta: 24, pregunta:' ¿Quién fue el primer presidente de Estados Unidos?', idcategoria: 2, alt: 'presidentes EE.UU', url:'https://ichef.bbci.co.uk/news/640/cpsprodpb/11EE0/production/_92204437_fptppp.jpg'},
+  {idpregunta: 25, pregunta:' ¿Quién dijo: “Hitler me ha copiado el bigote”?', idcategoria: 1, alt: 'el dictador', url:'https://www.efeeme.com/wp-content/uploads/el-gran-dictador-06-05-12-a.jpg'},
+
 ]
 
 const respuestas = [
@@ -91,6 +102,46 @@ const respuestas = [
   {idrespuesta: 58, respuesta:'Fuji', idpregunta: 15, correcta: false},
   {idrespuesta: 59, respuesta:'Aconcagua', idpregunta: 15, correcta: false},
   {idrespuesta: 60, respuesta:'Alpes', idpregunta: 15, correcta: false},
+  {idrespuesta: 61, respuesta:'Jakarta', idpregunta: 16, correcta: true},
+  {idrespuesta: 62, respuesta:'Seúl', idpregunta: 16, correcta: false},
+  {idrespuesta: 63, respuesta:'Katmandú', idpregunta: 16, correcta: false},
+  {idrespuesta: 64, respuesta:'Myanmar', idpregunta: 16, correcta: false},
+  {idrespuesta: 65, respuesta:'Olfato', idpregunta: 17, correcta: true},
+  {idrespuesta: 66, respuesta:'Gusto', idpregunta: 17, correcta: false},
+  {idrespuesta: 67, respuesta:'Tacto', idpregunta: 17, correcta: false},
+  {idrespuesta: 68, respuesta:'Oído', idpregunta: 17, correcta: false},
+  {idrespuesta: 69, respuesta:'Liberia', idpregunta: 18, correcta: true},
+  {idrespuesta: 70, respuesta:'Guinea', idpregunta: 18, correcta: false},
+  {idrespuesta: 71, respuesta:'Somalia', idpregunta: 18, correcta: false},
+  {idrespuesta: 72, respuesta:'Chad', idpregunta: 18, correcta: false},
+  {idrespuesta: 73, respuesta:'Walt Disney', idpregunta: 19, correcta: true},
+  {idrespuesta: 74, respuesta:'J.R.R. Tolkien', idpregunta: 19, correcta: false},
+  {idrespuesta: 75, respuesta:'Philip K. Dick ', idpregunta: 19, correcta: false},
+  {idrespuesta: 76, respuesta:'Frederic Skinner', idpregunta: 19, correcta: false},
+  {idrespuesta: 77, respuesta:'Mac', idpregunta: 20, correcta: true},
+  {idrespuesta: 78, respuesta:'Son', idpregunta: 20, correcta: false},
+  {idrespuesta: 79, respuesta:'Ez', idpregunta: 20, correcta: false},
+  {idrespuesta: 80, respuesta:'Sonen', idpregunta: 20, correcta: false},
+  {idrespuesta: 81, respuesta:'Argentina', idpregunta: 21, correcta: true},
+  {idrespuesta: 82, respuesta:'Chile', idpregunta: 21, correcta: false},
+  {idrespuesta: 83, respuesta:'Bolivia', idpregunta: 21, correcta: false},
+  {idrespuesta: 84, respuesta:'Perú', idpregunta: 21, correcta: false},
+  {idrespuesta: 85, respuesta:'Seis', idpregunta: 22, correcta: true},
+  {idrespuesta: 86, respuesta:'Cinco', idpregunta: 22, correcta: false},
+  {idrespuesta: 87, respuesta:'Siete', idpregunta: 22, correcta: false},
+  {idrespuesta: 88, respuesta:'Cuatro', idpregunta: 22, correcta: false},
+  {idrespuesta: 89, respuesta:'Ecuador', idpregunta: 23, correcta: true},
+  {idrespuesta: 90, respuesta:'Paraguay', idpregunta: 23, correcta: false},
+  {idrespuesta: 91, respuesta:'Brasil', idpregunta: 23, correcta: false},
+  {idrespuesta: 92, respuesta:'Venezuela', idpregunta: 23, correcta: false},
+  {idrespuesta: 93, respuesta:'George Washington', idpregunta: 24, correcta: true},
+  {idrespuesta: 94, respuesta:'Abraham Lincoln', idpregunta: 24, correcta: false},
+  {idrespuesta: 95, respuesta:'Thomas Jefferson', idpregunta: 24, correcta: false},
+  {idrespuesta: 96, respuesta:'Andrew Jackson', idpregunta: 24, correcta: false},
+  {idrespuesta: 97, respuesta:'Charlie Chaplin', idpregunta: 25, correcta: true},
+  {idrespuesta: 98, respuesta:'Millard Fillmore', idpregunta: 25, correcta: false},
+  {idrespuesta: 99, respuesta:'Alphonso Capone', idpregunta: 25, correcta: false},
+  {idrespuesta: 100, respuesta:'Chespirito', idpregunta: 25, correcta: false},
 ]
 
 var preguntaactual;
@@ -133,6 +184,9 @@ var r = 1;
 ron.innerHTML = r;
 ////
 
+///SONIDOS
+var sndperder = document.querySelector('#perder');
+var sndganar = document.querySelector('#ganar');
 
 var historial=[];
 if(localStorage.getItem('datos') !== null){
@@ -293,6 +347,7 @@ function compruebaRespuesta(btn){
      pun.innerHTML = p;
 
    }else{
+    sndperder.play();
      btn.setAttribute('class', "btn btn-danger");
      confirma.style.color = 'red';
      confirma.textContent = 'Te equivocaste, mejor suerte la próxima!';
@@ -305,6 +360,7 @@ function compruebaRespuesta(btn){
         r++;
        ////* cuando la ronda sea 5, mostrar mensaje de victoria
         if(r > 5){
+          sndganar.play();
           console.log("NO HAY MÁS CATEGORIAS");
           ban = false; ///para detener el tiempo
           Swal.fire({
