@@ -24,6 +24,7 @@ console.log(datostorage);
 
 let creaTabla = function(datos){
     let cabecera = `<tr><th>Usuario</th>
+                    <th>Rondas</th>
                     <th>Puntos</th>
                     <th>Tiempo (s)</th>
                     <th>Fecha</th></tr>`;
@@ -31,6 +32,7 @@ let creaTabla = function(datos){
         for(let dato of datos){
             let fila = `<tr>`;
             fila += `<td>${dato.user}</td>`;
+            fila += `<td>${dato.ronda}</td>`;
             fila += `<td>${dato.puntos}</td>`;
             fila += `<td>${dato.tiempo}</td>`;
             fila += `<td>${dato.fecha}</td>`;

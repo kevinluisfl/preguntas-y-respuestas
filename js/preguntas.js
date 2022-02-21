@@ -12,7 +12,7 @@ const categorias = [
   {idcategoria: 5, nombrecategoria:'muy dificil', valorcategoria: 25},
 ]
 
-const preguntas = [
+var preguntas = [
 {idpregunta: 1, pregunta:' ¿Cuál es el animal nacional de Australia?', idcategoria: 1, alt: 'australia', url:'https://www.esl-idiomas.com/sites/default/files/styles/hero_banner_mobile/public/country/esl-australia-language-stay-hero.jpg?itok=VhTZThXQ'},
 {idpregunta: 2, pregunta:' ¿Cuántos días le toma a la tierra dar una vuelta a la órbita del sol?', idcategoria: 1, alt: 'translacion terrestre', url:'https://concepto.de/wp-content/uploads/2019/02/traslacion-de-la-tierra-portada-1.jpg'},
 {idpregunta: 3, pregunta:' ¿Cuál es el país más pequeño del mundo?', idcategoria: 2, alt: 'pais más pequeño', url:'https://www.geoenciclopedia.com/wp-content/uploads/2018/10/banderas-paises.jpg'},
@@ -144,7 +144,6 @@ const respuestas = [
 {idrespuesta: 100, respuesta:'Chespirito', idpregunta: 25, correcta: false},
 ]
 
-var preguntaactual;
 ///////
 
 const titulo = document.querySelector('h1');
@@ -200,15 +199,18 @@ if(localStorage.getItem('datos') !== null){
     historial = datostorage;
 }
 
+var preguntaactual;
+var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
 
 var datos = {
     user: usuario ? usuario.toUpperCase() : 'N.N',
+    ronda: 1,
     puntos: 0,
     tiempo: 0,
     fecha: ''
 }
 
-var {user, puntos, tiempo, fecha} = datos;
+var {user, ronda, puntos, tiempo, fecha} = datos;
 
 titulo.textContent= `Hola ${user}, Escoge la opción correcta`;
 
@@ -243,7 +245,7 @@ function guardaDatos(){
     ban = false;
     ///formatear fecha
     var date = new Date();
-    datos= {...datos, puntos: p, tiempo: t, fecha: date.toLocaleString()};
+    datos= {...datos, ronda: r-1, puntos: p, tiempo: t, fecha: date.toLocaleString()};
     ///pasar datos al historial
     historial.push(datos);
     localStorage.removeItem('datos');
@@ -276,12 +278,13 @@ function cargarPregunta(){
     }
   }
 
-  var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r && pr.idpregunta != idpreguntaanterior);
-  ordenAleatorio(preguntascategoria);
+  var preguntastemp = preguntascategoria.filter(pr => pr.idpregunta != idpreguntaanterior);
+  preguntascategoria = preguntastemp;
+  ordenAleatorio(preguntastemp);
 
   ///////* escoger una pregunta dependiendo la ronda (1,2,3,4,5)
-  // var preguntaactual = preguntascategoria.find(pr => pr.idcategoria == r);
-  preguntaactual = preguntascategoria[0];
+  // var preguntaactual = preguntastemp.find(pr => pr.idcategoria == r);
+  preguntaactual = preguntastemp[0];
 
   //////filtrar respuestas de esa pregunta
   var opcionesrespuestas = respuestas.filter(re => re.idpregunta == preguntaactual.idpregunta);
@@ -368,6 +371,7 @@ function compruebaRespuesta(btn){
           r++;
           cp = 1;
           idpreguntaanterior = 0;
+          preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
         }else{
           cp += 1;
           idpreguntaanterior = preguntaactual.idpregunta;
