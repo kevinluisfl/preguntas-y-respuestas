@@ -160,8 +160,11 @@ var confirma = document.querySelector('#confirm');
 
 ////PUNTAJE
 var pun = document.querySelector('#puntaje');
+var acum = document.querySelector('#acumulado');
 var p = 0;
+var acumulated = p;
 pun.innerHTML = p;
+acum.innerHTML = acumulated;
 ////
 
 ////TIEMPO
@@ -193,6 +196,8 @@ numeropregunta.innerHTML = cp;
 ///SONIDOS
 var sndperder = document.querySelector('#perder');
 var sndganar = document.querySelector('#ganar');
+var sndselect = document.querySelector('#select');
+var sndavance = document.querySelector('#avance');
 
 var historial=[];
 if(localStorage.getItem('datos') !== null){
@@ -245,7 +250,7 @@ function guardaDatos(){
     ban = false;
     ///formatear fecha
     var date = new Date();
-    datos= {...datos, ronda: r-1, puntos: p, tiempo: t, fecha: date.toLocaleString()};
+    datos= {...datos, ronda: r, puntos: acumulated, tiempo: t, fecha: date.toLocaleString()};
     ///pasar datos al historial
     historial.push(datos);
     localStorage.removeItem('datos');
@@ -258,7 +263,7 @@ function guardaDatos(){
 
 //////////FUNCION AL CARGAR Y AL CAMBIAR PREGUNTA
 function cargarPregunta(){
-
+  ban = true;
   ////volver clases preseleccion
   btn1.setAttribute('class', "btn btn-outline-secondary");
   btn2.setAttribute('class', "btn btn-outline-secondary");
@@ -304,7 +309,7 @@ function cargarPregunta(){
 
   ////* RESPUESTAS- button id = res1 - res4, textContent = respuestas.respuesta
   btn1.textContent = opcionesrespuestas[0].respuesta;
-  btn1.setAttribute('value', opcionesrespuestas[0].correcta);
+  btn1.setAttribute('value', opcionesrespuestas[0].correcta);  ///esto deberia agregarse cuando den click
 
   btn2.textContent = opcionesrespuestas[1].respuesta;
   btn2.setAttribute('value', opcionesrespuestas[1].correcta);
@@ -321,28 +326,34 @@ function cargarPregunta(){
 
 btn1.addEventListener("click", ()=>{
   btn1.setAttribute('class', "btn btn-warning");
+  sndselect.play();
   compruebaRespuesta(btn1);
 })
 btn2.addEventListener("click", ()=>{
   btn2.setAttribute('class', "btn btn-warning");
+  sndselect.play();
   compruebaRespuesta(btn2);
 })
 btn3.addEventListener("click", ()=>{
   btn3.setAttribute('class', "btn btn-warning");
+  sndselect.play();
   compruebaRespuesta(btn3);
 })
 btn4.addEventListener("click", ()=>{
   btn4.setAttribute('class', "btn btn-warning");
+  sndselect.play();
   compruebaRespuesta(btn4);
 })
 
 function compruebaRespuesta(btn){
+  ban = false; ///para detener el tiempo
  ////deshabilitar
  btn1.setAttribute('disabled', '');
  btn2.setAttribute('disabled', '');
  btn3.setAttribute('disabled', '');
  btn4.setAttribute('disabled', '');
  setTimeout(function() { 
+  sndselect.pause();
   var valorpunto = 0;
    if(btn.value == 'true'){
      btn.setAttribute('class', "btn btn-success");
@@ -368,44 +379,68 @@ function compruebaRespuesta(btn){
        console.log("SIGUIENTE PREGUNTA");
         confirma.textContent = '';
         if(cp >= 5){
+          sndavance.play();
+          acumulated = p;
           r++;
           cp = 1;
           idpreguntaanterior = 0;
           preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
+
+          //////////
+          Swal.fire({
+            title: `Felicidades! ${user}`,
+            text: `Avanzas a la ronda ${r}`,
+            imageUrl: 'https://media.giphy.com/media/26BGKJGlwVl02OXrW/giphy.gif',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'round avanced',
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            timer: 2500
+          })
+          /////////
+          setTimeout(function (){
+            cargarPregunta();
+          },2500);
         }else{
           cp += 1;
           idpreguntaanterior = preguntaactual.idpregunta;
+          ///funcion que carga las nuevas preguntas
+          cargarPregunta();
         }
        ////* cuando la ronda sea mayor que la cantidad de categorias, mostrar mensaje de victoria
         if(r > categorias.length){
+          r--;
           sndganar.play();
           console.log("NO HAY MÁS CATEGORIAS");
-          ban = false; ///para detener el tiempo
           Swal.fire({
-            title: `Felicidades! ${user}`,
-            text: 'lograste responder todas las preguntas correctamente.',
+            title: `Lo lograste! ${user}`,
+            text: 'Respondiste todas las preguntas correctamente.',
             imageUrl: 'https://media.giphy.com/media/J5GhsPx9UnxOXOIWJa/giphy.gif',
             imageWidth: 400,
             imageHeight: 200,
-            imageAlt: 'celebración',
+            imageAlt: 'victoy',
             showConfirmButton: false,
             allowOutsideClick: false,
           })
           setTimeout(function (){
-            sndganar.pause()
-            guardaDatos()
+            sndganar.pause();
+            guardaDatos();
           },5000);
         }else{
           ////mostrar la ronda en pantalla
           ron.innerHTML = r;
+          acum.innerHTML = acumulated;
           numeropregunta.innerHTML = cp;
-          ////funcion que carga las nuevas preguntas
-          cargarPregunta();
         }
      }else{
+      guardaAcumulado();
       Swal.fire({
         title: 'Revancha?',
         showDenyButton: true,
+        imageUrl: 'https://media.giphy.com/media/gV0qVmjmLr4k/giphy.gif',
+        imageWidth: 400,
+        imageHeight: 200,
         confirmButtonText: 'Si, revancha',
         denyButtonText: `No gracias`,
       }).then((result) => {
@@ -414,6 +449,7 @@ function compruebaRespuesta(btn){
           window.location="./preguntas.html";
         } else if (result.isDenied) {
           console.log("VOLVER AL INICIO");
+          localStorage.removeItem('user');
             window.location="./index.html";
         }
       })
@@ -422,4 +458,19 @@ function compruebaRespuesta(btn){
 
  }, 1250);
 
+}
+
+
+/////FUNCION PARA GUARDAR DATOS
+function guardaAcumulado(){
+  ///parar contador
+  ban = false;
+  ///formatear fecha
+  var date = new Date();
+  datos= {...datos, ronda: r, puntos: acumulated, tiempo: t, fecha: date.toLocaleString()};
+  ///pasar datos al historial
+  historial.push(datos);
+  localStorage.removeItem('datos');
+  ////pasar datos al localstorage
+  localStorage.setItem('datos', JSON.stringify(historial));
 }
