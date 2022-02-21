@@ -184,6 +184,13 @@ var r = 1;
 ron.innerHTML = r;
 ////
 
+///CONTADOR DE PREGUNTAS
+var numeropregunta = document.querySelector('#numeropregunta');
+var cp = 1;
+var idpreguntaanterior = 0;
+numeropregunta.innerHTML = cp;
+/////
+
 ///SONIDOS
 var sndperder = document.querySelector('#perder');
 var sndganar = document.querySelector('#ganar');
@@ -269,7 +276,7 @@ function cargarPregunta(){
     }
   }
 
-  var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
+  var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r && pr.idpregunta != idpreguntaanterior);
   ordenAleatorio(preguntascategoria);
 
   ///////* escoger una pregunta dependiendo la ronda (1,2,3,4,5)
@@ -357,7 +364,14 @@ function compruebaRespuesta(btn){
      if(btn.value == 'true'){
        console.log("SIGUIENTE PREGUNTA");
         confirma.textContent = '';
-        r++;
+        if(cp >= 5){
+          r++;
+          cp = 1;
+          idpreguntaanterior = 0;
+        }else{
+          cp += 1;
+          idpreguntaanterior = preguntaactual.idpregunta;
+        }
        ////* cuando la ronda sea mayor que la cantidad de categorias, mostrar mensaje de victoria
         if(r > categorias.length){
           sndganar.play();
@@ -380,6 +394,7 @@ function compruebaRespuesta(btn){
         }else{
           ////mostrar la ronda en pantalla
           ron.innerHTML = r;
+          numeropregunta.innerHTML = cp;
           ////funcion que carga las nuevas preguntas
           cargarPregunta();
         }
