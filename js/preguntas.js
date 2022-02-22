@@ -206,6 +206,7 @@ if(localStorage.getItem('datos') !== null){
 
 var preguntaactual;
 var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
+var opcionesrespuestas;
 
 var datos = {
     user: usuario ? usuario.toUpperCase() : 'N.N',
@@ -270,6 +271,11 @@ function cargarPregunta(){
   btn3.setAttribute('class', "btn btn-outline-secondary");
   btn4.setAttribute('class', "btn btn-outline-secondary");
   ////habilitar los botones de respuestas
+  btn1.removeAttribute('value');
+  btn2.removeAttribute('value');
+  btn3.removeAttribute('value');
+  btn4.removeAttribute('value');
+
   btn1.removeAttribute('disabled');
   btn2.removeAttribute('disabled');
   btn3.removeAttribute('disabled');
@@ -292,7 +298,7 @@ function cargarPregunta(){
   preguntaactual = preguntastemp[0];
 
   //////filtrar respuestas de esa pregunta
-  var opcionesrespuestas = respuestas.filter(re => re.idpregunta == preguntaactual.idpregunta);
+  opcionesrespuestas = respuestas.filter(re => re.idpregunta == preguntaactual.idpregunta);
   ordenAleatorio(opcionesrespuestas);
   //////* quedaria un objeto con la pregunta, y un array con las 4 respuestas
   //////* asignarle un value al boton respuestas.correcta
@@ -307,41 +313,41 @@ function cargarPregunta(){
   imagen.alt = preguntaactual.alt;
   console.log(imagen.alt);
 
-  ////* RESPUESTAS- button id = res1 - res4, textContent = respuestas.respuesta
+  ////* RESPUESTAS- button id = res1 -- res4, textContent = respuestas.respuesta
   btn1.textContent = opcionesrespuestas[0].respuesta;
-  btn1.setAttribute('value', opcionesrespuestas[0].correcta);  ///esto deberia agregarse cuando den click
 
   btn2.textContent = opcionesrespuestas[1].respuesta;
-  btn2.setAttribute('value', opcionesrespuestas[1].correcta);
 
   btn3.textContent = opcionesrespuestas[2].respuesta;
-  btn3.setAttribute('value', opcionesrespuestas[2].correcta);
 
   btn4.textContent = opcionesrespuestas[3].respuesta;
-  btn4.setAttribute('value', opcionesrespuestas[3].correcta);
 
 }
 ////////FIN FUNCION
 
 
 btn1.addEventListener("click", ()=>{
-  btn1.setAttribute('class', "btn btn-warning");
   sndselect.play();
+  btn1.setAttribute('value', opcionesrespuestas[0].correcta);
+  btn1.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn1);
 })
 btn2.addEventListener("click", ()=>{
-  btn2.setAttribute('class', "btn btn-warning");
   sndselect.play();
+  btn2.setAttribute('value', opcionesrespuestas[1].correcta);
+  btn2.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn2);
 })
 btn3.addEventListener("click", ()=>{
-  btn3.setAttribute('class', "btn btn-warning");
   sndselect.play();
+  btn3.setAttribute('value', opcionesrespuestas[2].correcta);
+  btn3.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn3);
 })
 btn4.addEventListener("click", ()=>{
-  btn4.setAttribute('class', "btn btn-warning");
   sndselect.play();
+  btn4.setAttribute('value', opcionesrespuestas[3].correcta);
+  btn4.setAttribute('class', "btn btn-warning");
   compruebaRespuesta(btn4);
 })
 
@@ -354,6 +360,7 @@ function compruebaRespuesta(btn){
  btn4.setAttribute('disabled', '');
  setTimeout(function() { 
   sndselect.pause();
+  sndselect.currentTime = 0;
   var valorpunto = 0;
    if(btn.value == 'true'){
      btn.setAttribute('class', "btn btn-success");
@@ -396,12 +403,12 @@ function compruebaRespuesta(btn){
             imageAlt: 'round avanced',
             showConfirmButton: false,
             allowOutsideClick: false,
-            timer: 2500
+            timer: 3000
           })
           /////////
           setTimeout(function (){
             cargarPregunta();
-          },2500);
+          },3000);
         }else{
           cp += 1;
           idpreguntaanterior = preguntaactual.idpregunta;
@@ -456,7 +463,7 @@ function compruebaRespuesta(btn){
      }
    }, 1000)
 
- }, 1250);
+ }, 1500);
 
 }
 
