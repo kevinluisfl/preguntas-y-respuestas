@@ -148,6 +148,7 @@ const respuestas = [
 
 const titulo = document.querySelector('h1');
 const btnRetiro = document.querySelector('#btnretiro');
+const btnSalir = document.querySelector('#btnsalir');
 
 ////botones de respuestas
 var btn1 = document.querySelector('#res1');
@@ -245,6 +246,13 @@ btnRetiro.addEventListener("click", ()=>{
       })
 })
 
+btnSalir.addEventListener("click",()=>{
+  window.location="./index.html";
+})
+
+btnSalir.setAttribute('hidden', '');
+btnRetiro.removeAttribute('hidden');
+
 /////FUNCION PARA GUARDAR DATOS
 function guardaDatos(){
     ///parar contador
@@ -325,7 +333,6 @@ function cargarPregunta(){
 }
 ////////FIN FUNCION
 
-
 btn1.addEventListener("click", ()=>{
   sndselect.play();
   btn1.setAttribute('value', opcionesrespuestas[0].correcta);
@@ -353,37 +360,37 @@ btn4.addEventListener("click", ()=>{
 
 function compruebaRespuesta(btn){
   ban = false; ///para detener el tiempo
- ////deshabilitar
- btn1.setAttribute('disabled', '');
- btn2.setAttribute('disabled', '');
- btn3.setAttribute('disabled', '');
- btn4.setAttribute('disabled', '');
- setTimeout(function() { 
-  sndselect.pause();
-  sndselect.currentTime = 0;
-  var valorpunto = 0;
-   if(btn.value == 'true'){
-     btn.setAttribute('class', "btn btn-success");
-     confirma.style.color = 'green';
-     confirma.textContent = 'Es correcto!';
-     categorias.forEach(cat => {
-       if(cat.idcategoria == preguntaactual.idcategoria){
-        valorpunto = cat.valorcategoria
-        }
-     })
-     p+=valorpunto;
-     pun.innerHTML = p;
+  ////deshabilitar
+  btn1.setAttribute('disabled', '');
+  btn2.setAttribute('disabled', '');
+  btn3.setAttribute('disabled', '');
+  btn4.setAttribute('disabled', '');
+  setTimeout(function() { 
+    sndselect.pause();
+    sndselect.currentTime = 0;
+    var valorpunto = 0;
+    if(btn.value == 'true'){
+      btn.setAttribute('class', "btn btn-success");
+      confirma.style.color = 'green';
+      confirma.textContent = 'Es correcto!';
+      categorias.forEach(cat => {
+        if(cat.idcategoria == preguntaactual.idcategoria){
+          valorpunto = cat.valorcategoria
+          }
+      })
+      p+=valorpunto;
+      pun.innerHTML = p;
 
-   }else{
-    sndperder.play();
-     btn.setAttribute('class', "btn btn-danger");
-     confirma.style.color = 'red';
-     confirma.textContent = 'Te equivocaste, mejor suerte la próxima!';
-   }
+    }else{
+      sndperder.play();
+      btn.setAttribute('class', "btn btn-danger");
+      confirma.style.color = 'red';
+      confirma.textContent = 'Te equivocaste, mejor suerte la próxima!';
+    }
 
-   setTimeout(function (){
-     if(btn.value == 'true'){
-       console.log("SIGUIENTE PREGUNTA");
+    setTimeout(function (){
+      if(btn.value == 'true'){
+        console.log("SIGUIENTE PREGUNTA");
         confirma.textContent = '';
         if(cp >= 5){
           sndavance.play();
@@ -393,10 +400,9 @@ function compruebaRespuesta(btn){
           idpreguntaanterior = 0;
           preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
 
-          //////////
           Swal.fire({
             title: `Felicidades! ${user}`,
-            text: `Avanzas a la ronda ${r}`,
+            html: `Avanzas a la ronda <b>${r}</b>`,
             imageUrl: 'https://media.giphy.com/media/26BGKJGlwVl02OXrW/giphy.gif',
             imageWidth: 400,
             imageHeight: 200,
@@ -405,7 +411,6 @@ function compruebaRespuesta(btn){
             allowOutsideClick: false,
             timer: 3000
           })
-          /////////
           setTimeout(function (){
             cargarPregunta();
           },3000);
@@ -415,7 +420,7 @@ function compruebaRespuesta(btn){
           ///funcion que carga las nuevas preguntas
           cargarPregunta();
         }
-       ////* cuando la ronda sea mayor que la cantidad de categorias, mostrar mensaje de victoria
+        ////* cuando la ronda sea mayor que la cantidad de categorias, mostrar mensaje de victoria
         if(r > categorias.length){
           r--;
           sndganar.play();
@@ -440,33 +445,34 @@ function compruebaRespuesta(btn){
           acum.innerHTML = acumulated;
           numeropregunta.innerHTML = cp;
         }
-     }else{
-      guardaAcumulado();
-      Swal.fire({
-        title: 'Revancha?',
-        showDenyButton: true,
-        imageUrl: 'https://media.giphy.com/media/gV0qVmjmLr4k/giphy.gif',
-        imageWidth: 400,
-        imageHeight: 200,
-        confirmButtonText: 'Si, revancha',
-        denyButtonText: `No gracias`,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          console.log("VOLVER A INTENTAR");
-          window.location="./preguntas.html";
-        } else if (result.isDenied) {
-          console.log("VOLVER AL INICIO");
-          localStorage.removeItem('user');
-            window.location="./index.html";
-        }
-      })
-     }
-   }, 1000)
+      }else{
+        guardaAcumulado();
+        btnRetiro.setAttribute('hidden', '');
+        btnSalir.removeAttribute('hidden');
+        Swal.fire({
+          title: 'Revancha?',
+          showDenyButton: true,
+          imageUrl: 'https://media.giphy.com/media/gV0qVmjmLr4k/giphy.gif',
+          imageWidth: 400,
+          imageHeight: 200,
+          confirmButtonText: 'Si, revancha',
+          denyButtonText: `No gracias`,
+        }).then((result) => {
+          if (result.isConfirmed) {
+            console.log("VOLVER A INTENTAR");
+            window.location="./preguntas.html";
+          } else if (result.isDenied) {
+            console.log("VOLVER AL INICIO");
+            localStorage.removeItem('user');
+              window.location="./index.html";
+          }
+        })
+      }
+    }, 1250)
 
- }, 1500);
+  }, 3000);
 
 }
-
 
 /////FUNCION PARA GUARDAR DATOS
 function guardaAcumulado(){
