@@ -241,7 +241,8 @@ btnRetiro.addEventListener("click", ()=>{
         cancelButtonText: 'No, continuar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          if(p > 0 && acumulated > 0){
+          if(p > 0 ){
+            acumulated = p;
             guardaDatos();
           }else{
             localStorage.removeItem('user');
@@ -381,7 +382,8 @@ function compruebaRespuesta(btn){
       sndcorrect.play();
       btn.setAttribute('class', "btn btn-success");
       confirma.style.color = 'green';
-      confirma.textContent = 'Es correcto!';
+      // confirma.textContent = `Es correcto! &#x1F44F;`;
+      confirma.innerHTML = `Es correcto! &#x1F44F;`;
       categorias.forEach(cat => {
         if(cat.idcategoria == preguntaactual.idcategoria){
           valorpunto = cat.valorcategoria
@@ -394,7 +396,8 @@ function compruebaRespuesta(btn){
       sndperder.play();
       btn.setAttribute('class', "btn btn-danger");
       confirma.style.color = 'red';
-      confirma.textContent = 'Te equivocaste, mejor suerte la próxima!';
+      // confirma.textContent = `Te equivocaste, mejor suerte la próxima! &#x1F4A2;`;
+      confirma.innerHTML = `Te equivocaste, mejor suerte la próxima! &#x1F4A2;`;
     }
 
     setTimeout(function (){

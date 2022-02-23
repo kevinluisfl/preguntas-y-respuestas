@@ -63,7 +63,7 @@ nav .infopartida{
     margin: 0.5rem;
 }
 
-.cabeceratabla, .pregunta div{
+#author, .cabeceratabla, .pregunta div{
     display: flex;
     align-items: center;
     justify-content: center;

@@ -33,14 +33,41 @@ let creaTabla = function(datos){
                     <th>Tiempo (s)</th>
                     <th>Fecha</th></tr>`;
     if(datos){
+        let numberone = 1;
         for(let dato of datos){
             let fila = `<tr>`;
-            fila += `<td>${dato.user}</td>`;
-            fila += `<td>${dato.ronda}</td>`;
-            fila += `<td>${dato.puntos}</td>`;
-            fila += `<td>${dato.tiempo}</td>`;
-            fila += `<td>${dato.fecha}</td>`;
-            fila += `</tr>`
+            if(numberone == 1){
+                fila += `<td style="font-size:1.5em;">&#x1F451; &#x1F947;${dato.user}</td>`;
+                fila += `<td>${dato.ronda}</td>`;
+                fila += `<td>${dato.puntos}</td>`;
+                fila += `<td>${dato.tiempo}</td>`;
+                fila += `<td>${dato.fecha}</td>`;
+                fila += `</tr>`;
+                numberone++;
+            }else if(numberone == 2){
+                fila += `<td style="font-size:1.3em;">&#x1F948;${dato.user}</td>`;
+                fila += `<td>${dato.ronda}</td>`;
+                fila += `<td>${dato.puntos}</td>`;
+                fila += `<td>${dato.tiempo}</td>`;
+                fila += `<td>${dato.fecha}</td>`;
+                fila += `</tr>`;
+                numberone++;
+            }else if(numberone == 3){
+                fila += `<td style="font-size:1em;">&#x1F949;${dato.user}</td>`;
+                fila += `<td>${dato.ronda}</td>`;
+                fila += `<td>${dato.puntos}</td>`;
+                fila += `<td>${dato.tiempo}</td>`;
+                fila += `<td>${dato.fecha}</td>`;
+                fila += `</tr>`;
+                numberone++;
+            }else{
+                fila += `<td style="font-size:0.9em;">${dato.user}</td>`;
+                fila += `<td>${dato.ronda}</td>`;
+                fila += `<td>${dato.puntos}</td>`;
+                fila += `<td>${dato.tiempo}</td>`;
+                fila += `<td>${dato.fecha}</td>`;
+                fila += `</tr>`;
+            }
             cabecera += fila;
         }
     }else{
