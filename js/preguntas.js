@@ -199,10 +199,15 @@ var sndperder = document.querySelector('#perder');
 var sndganar = document.querySelector('#ganar');
 var sndselect = document.querySelector('#select');
 var sndavance = document.querySelector('#avance');
+var sndcorrect = document.querySelector('#correct');
 
 var historial=[];
-if(localStorage.getItem('datos') !== null){
+if(datostorage){
     historial = datostorage;
+}
+if(!usuario){
+  console.log("NO HAY USER");
+  window.location="./index.html";
 }
 
 var preguntaactual;
@@ -221,8 +226,6 @@ var {user, ronda, puntos, tiempo, fecha} = datos;
 
 titulo.textContent= `Hola ${user}, Escoge la opción correcta`;
 
-window.onload = cargarPregunta();
-
 btnRetiro.addEventListener("click", ()=>{
   /////* PREGUNTAR POR LOS PUNTOS, PARA QUE NO GUARDE CON 0 PTS
   ////* SI SE RETIRA EN LA PRIMERA LO LLEVE AL INICIO
@@ -234,19 +237,22 @@ btnRetiro.addEventListener("click", ()=>{
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Si, retirarme!'
+        confirmButtonText: 'Si, retirarme!',
+        cancelButtonText: 'No, continuar!'
       }).then((result) => {
         if (result.isConfirmed) {
-          if(p == 0){
-            window.location="./index.html";
-          }else{
+          if(p > 0 && acumulated > 0){
             guardaDatos();
+          }else{
+            localStorage.removeItem('user');
+            window.location="./index.html";
           }
         }
       })
 })
 
 btnSalir.addEventListener("click",()=>{
+  localStorage.removeItem('user');
   window.location="./index.html";
 })
 
@@ -266,13 +272,15 @@ function guardaDatos(){
     ////pasar datos al localstorage
     localStorage.setItem('datos', JSON.stringify(historial));
     ////redireccionar al page puntajes
-    window.location="./puntajes.html";
     localStorage.removeItem('user');
+    window.location="./puntajes.html";
 }
 
 //////////FUNCION AL CARGAR Y AL CAMBIAR PREGUNTA
 function cargarPregunta(){
   ban = true;
+  // sndtime.play();
+  // sndtime.loop=true; //probar esto con un sonido corto
   ////volver clases preseleccion
   btn1.setAttribute('class', "btn btn-outline-secondary");
   btn2.setAttribute('class', "btn btn-outline-secondary");
@@ -370,6 +378,7 @@ function compruebaRespuesta(btn){
     sndselect.currentTime = 0;
     var valorpunto = 0;
     if(btn.value == 'true'){
+      sndcorrect.play();
       btn.setAttribute('class', "btn btn-success");
       confirma.style.color = 'green';
       confirma.textContent = 'Es correcto!';
@@ -409,6 +418,7 @@ function compruebaRespuesta(btn){
             imageAlt: 'round avanced',
             showConfirmButton: false,
             allowOutsideClick: false,
+            showCloseButton: true,
             timer: 3000
           })
           setTimeout(function (){
@@ -434,6 +444,7 @@ function compruebaRespuesta(btn){
             imageAlt: 'victoy',
             showConfirmButton: false,
             allowOutsideClick: false,
+            showCloseButton: true,
           })
           setTimeout(function (){
             sndganar.pause();
@@ -446,7 +457,9 @@ function compruebaRespuesta(btn){
           numeropregunta.innerHTML = cp;
         }
       }else{
-        guardaAcumulado();
+        if(acumulated > 0){
+          guardaAcumulado();
+        }
         btnRetiro.setAttribute('hidden', '');
         btnSalir.removeAttribute('hidden');
         Swal.fire({
@@ -464,7 +477,7 @@ function compruebaRespuesta(btn){
           } else if (result.isDenied) {
             console.log("VOLVER AL INICIO");
             localStorage.removeItem('user');
-              window.location="./index.html";
+            window.location="./index.html";
           }
         })
       }
@@ -487,3 +500,5 @@ function guardaAcumulado(){
   ////pasar datos al localstorage
   localStorage.setItem('datos', JSON.stringify(historial));
 }
+
+window.onload = cargarPregunta();

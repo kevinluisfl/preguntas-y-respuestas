@@ -2,6 +2,10 @@ const datostorage = JSON.parse(localStorage.getItem('datos'));
 const tabla = document.querySelector('#tablapuntajes');
 const btnBorrar = document.querySelector('#btnborrartodo');
 
+document.addEventListener("onload",()=>{
+    localStorage.removeItem('user');
+})
+
 if(datostorage){
     datostorage.sort((a,b)=>{
         if(a.puntos < b.puntos){

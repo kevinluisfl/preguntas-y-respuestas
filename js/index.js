@@ -17,7 +17,7 @@ btnComenzar.addEventListener("click", ()=>{
           })
     }else{
         localStorage.setItem('user',user.value);
-        window.location="preguntas.html";
+        window.location="./preguntas.html";
     }
 
 })
