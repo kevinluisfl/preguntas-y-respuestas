@@ -8,7 +8,7 @@
 - Cada ronda será más difícil que la anterior, hay 5 categorias de dificultad.
 - Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado. 
 - Puedes retirarte en cualquier momento con el puntaje logrado.
-> Inicio
+> 
 ![](https://raw.githubusercontent.com/kevinluisfl/preguntas-y-respuestas/main/img/inicio.png)
 
 ## Puntajes 🏆
@@ -16,7 +16,7 @@
 - Si logras responder todo en el menor tiempo seguramente encabezaras la tabla.
 - El acumulado es el puntaje que tienes asegurado por si te equivocas en una respuesta.
 - Si te retiras tu puntaje será la puntuación actual y no el acumulado.
-> Puntajes
+> 
 ![](https://raw.githubusercontent.com/kevinluisfl/preguntas-y-respuestas/main/img/puntuacion.png)
 
 ## 
