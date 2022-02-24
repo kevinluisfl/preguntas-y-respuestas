@@ -6,7 +6,14 @@
 ## ¿Cómo jugar? 🤷
 - Escribe un nombre de usuario, clic en `"Comenzar a jugar"` y constesta 25 preguntas.
 - Cada ronda será más difícil que la anterior, hay 5 categorias de dificultad.
-- Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado, puedes retirarte en cualquier momento con el puntaje logrado.
+- Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado. 
+- Puedes retirarte en cualquier momento con el puntaje logrado.
+
+##Puntajes
+- Se organiza de mayor a menor puntaje, en caso de empate, el menor tiempo obtiene mejor posición.
+- Si logras responder todo en el menor tiempo seguramente encabezaras la tabla.
+- El acumulado es el puntaje que tienes asegurado por si te equivocas en una respuesta.
+- Si te retiras tu puntaje será la puntuación actual y no el acumulado.
 
 > Lo siguiente por hacer es usar una base de datos para la persistencia de información. 
 
