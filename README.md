@@ -14,4 +14,4 @@
 
 
 <h2 align="center">Autor <img src = "https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width = 32px></h2>
-<img src='https://cdn-icons-png.flaticon.com/512/25/25231.png' width='32px' ><a href="https://github.com/kevinluisfl/"> kevinluisfl </a>
+<a href="https://github.com/kevinluisfl/"><img src='https://cdn-icons-png.flaticon.com/512/25/25231.png' width='32px' > kevinluisfl </a>
