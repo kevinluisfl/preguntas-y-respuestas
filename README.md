@@ -1,5 +1,5 @@
 # Trivia preguntas
-<h1> Hola!, Soy Kevin Luis <img align="center" src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 50px> </h1>
+<h1 align="center"> Hola!, Soy Kevin Luis <img align="center" src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 50px> </h1>
 
 ` Para usar el proyecto solo es bajar y ejecutar el index.html `
 
