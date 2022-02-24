@@ -4,7 +4,7 @@
 ` Para usar el proyecto solo es bajar y ejecutar el index.html `
 
 ## ¿Cómo jugar? 🤷
-- Escribe un nombre de usuario, clic en "Comenzar a jugar" y constesta 25 preguntas.
+- Escribe un nombre de usuario, clic en `"Comenzar a jugar"` y constesta 25 preguntas.
 - Cada ronda será más difícil que la anterior, hay 5 categorias de dificultad.
 - Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado, puedes retirarte en cualquier momento con el puntaje logrado.
 
