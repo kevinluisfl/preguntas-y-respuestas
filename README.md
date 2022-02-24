@@ -9,7 +9,7 @@
 - Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado. 
 - Puedes retirarte en cualquier momento con el puntaje logrado.
 
-##Puntajes
+## Puntajes
 - Se organiza de mayor a menor puntaje, en caso de empate, el menor tiempo obtiene mejor posición.
 - Si logras responder todo en el menor tiempo seguramente encabezaras la tabla.
 - El acumulado es el puntaje que tienes asegurado por si te equivocas en una respuesta.
