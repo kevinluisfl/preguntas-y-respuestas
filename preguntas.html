@@ -15,40 +15,41 @@
         <header>
             <h1 class="titulopartida">Escoge la opción correcta</h1>
         </header>
-        <nav class="infopartida">
-            <p>&#x2B50; Ronda: <span id="ronda">0</span></p>
-            <p>&#x1F48E; Puntuación: <span id="puntaje">0</span></p>
-            <p>&#x1F3C6; Acumulado: <span id="acumulado">0</span></p>
-            <p>&#x231B; Tiempo: <span id="tiempo">0</span></p>
-            <button class="btn btn-secondary" id="btnretiro"> &#x1F921; Retirarse </button>
-            <button class="btn btn-secondary" id="btnsalir" hidden> &#x274C; Salir </button>
-        </nav>
-        <hr>
-        <article>
-            <div class="pregunta">
-                <div>
-                    <h3>Pregunta <span id="numeropregunta">...</span></h3>
-                    <h3 id="pregunta">¿?</h3>
+        <div class="card text-center">
+            <nav class="infopartida">
+                <p>&#x2B50; Ronda: <span id="ronda">0</span></p>
+                <p>&#x1F48E; Puntuación: <span id="puntaje">0</span></p>
+                <p>&#x1F3C6; Acumulado: <span id="acumulado">0</span></p>
+                <p>&#x231B; Tiempo: <span id="tiempo">0</span></p>
+                <button class="btn btn-secondary" id="btnretiro"> &#x1F921; Retirarse </button>
+                <button class="btn btn-secondary" id="btnsalir" hidden> &#x274C; Salir </button>
+            </nav>
+            <hr>
+            <article>
+                <div class="pregunta">
+                    <div>
+                        <h3>Pregunta <span id="numeropregunta">...</span></h3>
+                        <h3 id="pregunta">¿?</h3>
+                    </div>
+                        <img 
+                            src="./img/cargando.gif" 
+                            alt="cargando"
+                            width="350"
+                            height="200"
+                        >
+                        <p id="confirm"></p>
                 </div>
-                    <img 
-                        src="./img/cargando.gif" 
-                        alt="cargando"
-                        width="350"
-                        height="200"
-                    >
-                    <p id="confirm"></p>
-            </div>
-            <div class="respuestas">
-                <button id="res1" class="btn btn-outline-secondary" disabled>Respuesta 1</button>
-                <button id="res2" class="btn btn-outline-secondary" disabled>Respuesta 2</button>
-                <button id="res3" class="btn btn-outline-secondary" disabled>Respuesta 3</button>
-                <button id="res4" class="btn btn-outline-secondary" disabled>Respuesta 4</button>
-            </div>
-        </article>
+                <div class="respuestas">
+                    <button id="res1" class="btn btn-outline-secondary" disabled>Respuesta 1</button>
+                    <button id="res2" class="btn btn-outline-secondary" disabled>Respuesta 2</button>
+                    <button id="res3" class="btn btn-outline-secondary" disabled>Respuesta 3</button>
+                    <button id="res4" class="btn btn-outline-secondary" disabled>Respuesta 4</button>
+                </div>
+            </article>
+        </div>
     </div>
     <audio id="perder"><source src="./sound/loser.mp3" type="audio/mpeg"></audio>
     <audio id="ganar"><source src="./sound/winner.mp3" type="audio/mpeg"></audio>
-    <audio id="time"><source src="./sound/time.mp3" type="audio/mpeg"></audio>
     <audio id="select"><source src="./sound/selectedanswer.mp3" type="audio/mpeg"></audio>
     <audio id="avance"><source src="./sound/roundavanced.mp3" type="audio/mpeg"></audio>
     <audio id="correct"><source src="./sound/correctanswer.mp3" type="audio/mpeg"></audio>
