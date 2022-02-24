@@ -3,18 +3,19 @@
 
 ` Para usar el proyecto solo es bajar y ejecutar el index.html `
 
-## ¿Cómo jugar? 🤷
+<h2 align="center"> ¿Cómo jugar? 🤷 </h2>
 - Escribe un nombre de usuario, clic en `"Comenzar a jugar"` y constesta 25 preguntas.
 - Cada ronda será más difícil que la anterior, hay 5 categorias de dificultad.
 - Responde todas las preguntas correctamente para ganar!, por cada ronda superada aseguras el acumulado. 
 - Puedes retirarte en cualquier momento con el puntaje logrado.
 
-## Puntajes
+<h2 align="center"> Puntajes 🏆 </h2>
 - Se organiza de mayor a menor puntaje, en caso de empate, el menor tiempo obtiene mejor posición.
 - Si logras responder todo en el menor tiempo seguramente encabezaras la tabla.
 - El acumulado es el puntaje que tienes asegurado por si te equivocas en una respuesta.
 - Si te retiras tu puntaje será la puntuación actual y no el acumulado.
 
+## 
 > Lo siguiente por hacer es usar una base de datos para la persistencia de información. 
 
 > Actualmente se usa el localStorage del navegador.
