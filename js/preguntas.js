@@ -145,10 +145,11 @@ const respuestas = [
 ]
 
 ///////
-
 const titulo = document.querySelector('h1');
 const btnRetiro = document.querySelector('#btnretiro');
 const btnSalir = document.querySelector('#btnsalir');
+var imagen = document.querySelector('img');
+var preguntavista = document.querySelector('#pregunta');
 
 ////botones de respuestas
 var btn1 = document.querySelector('#res1');
@@ -210,8 +211,8 @@ if(!usuario){
   window.location="./index.html";
 }
 
-var preguntaactual;
 var preguntascategoria = preguntas.filter(pr => pr.idcategoria == r);
+var preguntaactual;
 var opcionesrespuestas;
 
 var datos = {
@@ -260,75 +261,58 @@ btnSalir.addEventListener("click",()=>{
 btnSalir.setAttribute('hidden', '');
 btnRetiro.removeAttribute('hidden');
 
-/////FUNCION PARA GUARDAR DATOS
-function guardaDatos(){
-    ///parar contador
-    ban = false;
-    ///formatear fecha
-    var date = new Date();
-    datos= {...datos, ronda: r, puntos: acumulated, tiempo: t, fecha: date.toLocaleString()};
-    ///pasar datos al historial
-    historial.push(datos);
-    localStorage.removeItem('datos');
-    ////pasar datos al localstorage
-    localStorage.setItem('datos', JSON.stringify(historial));
-    ////redireccionar al page puntajes
-    localStorage.removeItem('user');
-    window.location="./puntajes.html";
+///ordenar aleatorio preguntas y respuestas
+function ordenAleatorio(arr){
+  for(var i =arr.length-1 ; i>0 ;i--){
+      var j = Math.floor( Math.random() * (i + 1) ); //random index
+      [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
+  }
 }
 
 //////////FUNCION AL CARGAR Y AL CAMBIAR PREGUNTA
 function cargarPregunta(){
   ban = true;
+  /** se coloca la imagen de carga mientras se obtine la imagen de la pregunta*/
+  imagen.setAttribute('src', './img/cargando.gif');
   // sndtime.play();
   // sndtime.loop=true; //probar esto con un sonido corto
+  /** remover valor respuesta correcta*/
+  btn1.removeAttribute('value');
+  btn2.removeAttribute('value');
+  btn3.removeAttribute('value');
+  btn4.removeAttribute('value');
   ////volver clases preseleccion
   btn1.setAttribute('class', "btn btn-outline-secondary");
   btn2.setAttribute('class', "btn btn-outline-secondary");
   btn3.setAttribute('class', "btn btn-outline-secondary");
   btn4.setAttribute('class', "btn btn-outline-secondary");
   ////habilitar los botones de respuestas
-  btn1.removeAttribute('value');
-  btn2.removeAttribute('value');
-  btn3.removeAttribute('value');
-  btn4.removeAttribute('value');
-
   btn1.removeAttribute('disabled');
   btn2.removeAttribute('disabled');
   btn3.removeAttribute('disabled');
   btn4.removeAttribute('disabled');
 
-  ///ordenar aleatorio preguntas y respuestas
-  function ordenAleatorio(arr){
-    for(var i =arr.length-1 ; i>0 ;i--){
-        var j = Math.floor( Math.random() * (i + 1) ); //random index
-        [arr[i],arr[j]]=[arr[j],arr[i]]; // swap
-    }
-  }
-
+  /**Se filtra con el anterior id, para que el nuevo array no tenga esa pregunta, se evita repetirla asi */
   var preguntastemp = preguntascategoria.filter(pr => pr.idpregunta != idpreguntaanterior);
   preguntascategoria = preguntastemp;
   ordenAleatorio(preguntastemp);
 
-  ///////* escoger una pregunta dependiendo la ronda (1,2,3,4,5)
-  // var preguntaactual = preguntastemp.find(pr => pr.idcategoria == r);
+  /** La pregunta a mostrar es la primera que tenga el array despues de ordenar aleatoriamente */
   preguntaactual = preguntastemp[0];
+
+  ////* IMAGEN- img atributo src, cambiar preguntas.url
+  imagen.setAttribute('src', preguntaactual.url);
+  imagen.alt = preguntaactual.alt;
+  console.log(imagen.alt);
+
+  ////PREGUNTA- h3 id = preguntas.pregunta
+  preguntavista.textContent = preguntaactual.pregunta;
 
   //////filtrar respuestas de esa pregunta
   opcionesrespuestas = respuestas.filter(re => re.idpregunta == preguntaactual.idpregunta);
   ordenAleatorio(opcionesrespuestas);
   //////* quedaria un objeto con la pregunta, y un array con las 4 respuestas
   //////* asignarle un value al boton respuestas.correcta
-
-  ////PREGUNTA- h3 id = preguntas.pregunta
-  var preguntavista = document.querySelector('#pregunta');
-  preguntavista.textContent = preguntaactual.pregunta;
-
-  ////* IMAGEN- img atributo src, cambiar preguntas.url
-  var imagen = document.querySelector('img');
-  imagen.setAttribute('src', preguntaactual.url);
-  imagen.alt = preguntaactual.alt;
-  console.log(imagen.alt);
 
   ////* RESPUESTAS- button id = res1 -- res4, textContent = respuestas.respuesta
   btn1.textContent = opcionesrespuestas[0].respuesta;
@@ -491,6 +475,23 @@ function compruebaRespuesta(btn){
 }
 
 /////FUNCION PARA GUARDAR DATOS
+function guardaDatos(){
+  ///parar contador
+  ban = false;
+  ///formatear fecha
+  var date = new Date();
+  datos= {...datos, ronda: r, puntos: acumulated, tiempo: t, fecha: date.toLocaleString()};
+  ///pasar datos al historial
+  historial.push(datos);
+  localStorage.removeItem('datos');
+  ////pasar datos al localstorage
+  localStorage.setItem('datos', JSON.stringify(historial));
+  ////redireccionar al page puntajes
+  localStorage.removeItem('user');
+  window.location="./puntajes.html";
+}
+
+/////FUNCION PARA GUARDAR ACUMULADO
 function guardaAcumulado(){
   ///parar contador
   ban = false;
