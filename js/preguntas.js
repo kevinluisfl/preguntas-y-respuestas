@@ -232,7 +232,7 @@ btnRetiro.addEventListener("click", ()=>{
   ////* SI SE RETIRA EN LA PRIMERA LO LLEVE AL INICIO
     Swal.fire({
         title: 'Desea retirarse?',
-        html: `El juego terminará con el siguiente acumulado: <br>
+        html: `El juego terminará con la siguiente puntuación: <br>
         <b>${p} puntos</b> y un tiempo de <b>${t} segundos</b>`,
         icon: 'warning',
         showCancelButton: true,
@@ -398,7 +398,7 @@ function compruebaRespuesta(btn){
 
           Swal.fire({
             title: `Felicidades! ${user}`,
-            html: `Avanzas a la ronda <b>${r}</b>`,
+            html: `<h3>Avanzas a la ronda</h3> <h2>${r}</h2>`,
             imageUrl: 'https://media.giphy.com/media/26BGKJGlwVl02OXrW/giphy.gif',
             imageWidth: 400,
             imageHeight: 200,
@@ -425,6 +425,8 @@ function compruebaRespuesta(btn){
           Swal.fire({
             title: `Lo lograste! ${user}`,
             text: 'Respondiste todas las preguntas correctamente.',
+            html: `Obtuviste el siguiente puntaje:<br>
+                    <b>${p} puntos</b> y un tiempo de <b>${t} segundos</b>`,
             imageUrl: 'https://media.giphy.com/media/J5GhsPx9UnxOXOIWJa/giphy.gif',
             imageWidth: 400,
             imageHeight: 200,
@@ -450,12 +452,14 @@ function compruebaRespuesta(btn){
         btnRetiro.setAttribute('hidden', '');
         btnSalir.removeAttribute('hidden');
         Swal.fire({
-          title: 'Revancha?',
+          title: 'Otro intento?',
+          html: `Obtuviste el siguiente acumulado: <br>
+                <b>${acumulated} puntos</b> y un tiempo de <b>${t} segundos</b>`,
           showDenyButton: true,
           imageUrl: 'https://media.giphy.com/media/gV0qVmjmLr4k/giphy.gif',
           imageWidth: 400,
           imageHeight: 200,
-          confirmButtonText: 'Si, revancha',
+          confirmButtonText: 'Si, otro!',
           denyButtonText: `No gracias`,
         }).then((result) => {
           if (result.isConfirmed) {
