@@ -1,7 +1,7 @@
 # Trivia preguntas
 <h1 align="center"> Hola!, Soy Kevin Luis <img align="center" src = "https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width = 50px> </h1>
 
-` Para usar el proyecto solo es bajar y ejecutar el index.html `
+` Para usar el proyecto solo es clonar y ejecutar el index.html `
 
 ## ¿Cómo jugar? 🤷
 - Escribe un nombre de usuario, clic en `"Comenzar a jugar"` y constesta 25 preguntas.
