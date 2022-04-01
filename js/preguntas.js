@@ -422,6 +422,7 @@ function compruebaRespuesta(btn){
           r--;
           sndganar.play();
           console.log("NO HAY MÁS CATEGORIAS");
+          ban = false;
           Swal.fire({
             title: `Lo lograste! ${user}`,
             text: 'Respondiste todas las preguntas correctamente.',
