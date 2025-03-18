@@ -1,4 +1,5 @@
-const preguntas = [
+
+const preguntas1 = [
   {
     idpregunta: 1,
     pregunta: "¿donde queda el panteon?",
@@ -1039,7 +1040,7 @@ const preguntas = [
   },
 ];
 
-const respuestas = [
+const respuestas1 = [
   {
     idrespuesta: 1,
     respuesta: "roma",
@@ -4474,4 +4475,4 @@ const respuestas = [
   },
 ];
 
-export {preguntas, respuestas};
+ export {preguntas, respuestas};
