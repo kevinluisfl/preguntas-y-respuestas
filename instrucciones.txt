@@ -1,0 +1,8 @@
+-redactar las preguntas en excel
+-pasar a JSON
+-copiar el JSON en la variable 'data_' del archivo 'funciones2.js'
+-si es un servidor usar 'funciones3.js' en 'index.html' ese no es necesario copiar el JSON, lo hace automatico
+-ir en la vista al inicio y darle al botón 'Cargar data' 
+-listo iniciar
+
+'preguntas3.js' es quien trae las preguntas y respuestas del storage dinamico

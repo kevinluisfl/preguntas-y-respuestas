@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preguntas y respuestas</title>
+    <title>TECHMATH</title>
     <!-- Bootstrap CSS -->
     <link rel="shortcut icon" href="./img/favicon.ico" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
@@ -14,7 +14,7 @@
 <body>
     <div class="card text-center" >
         <header>
-            <h1>Trivia de Preguntas y Respuestas</h1>
+            <h1>Trivia Web Matemática - TECHMATH</h1>
         </header>
         <div  class="card text-center" style="align-items: center; justify-content: center;">
             <nav>
@@ -24,18 +24,23 @@
             </nav>
             <article>
                 <section id="inicio" >
-                    <label for="user">Escriba un usuario</label>
+                    <label for="user">Escriba el usuario</label>
                     <input class="form-control form-control-lg" placeholder="Nombre jugador" type="text" name="user" id="user" />
-                    <button class="btn btn-primary btn-lg" id="btncomenzar">Comenzar a jugar&#x1F525;</button>
+                    <button class="btn btn-primary btn-lg" id="btncomenzar" >Comenzar a jugar&#x1F525;</button>
                 </section>
             </article>
         </div>
     </div>
     <footer>
-        <p id="author">Created by<a href="https://github.com/kevinluisfl" target="_blank">kevinluisfl </a>&#x1F4BB;</p>
+        <div class="text-center" style="display: block;">
+            <button class="btn btn-outline-primary btn-sm" id="btncargardata" disabled>Cargar data</button>
+            <button class="btn btn-outline-danger btn-sm" id="btnborrardata" disabled>Borrar data</button>
+        </div>
+        <p id="author">Created by<a href="https://github.com/kevinluisfl" target="_blank">klfl </a>&#x1F4BB;</p> 
     </footer>
     <!-- Bootstrap Bundle with Popper -->
     <script src="js/index.js" ></script>
+    <script src="js/funciones3.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.1/dist/sweetalert2.all.min.js"></script>
     <script src="js/bootstrap/bootstrap.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
